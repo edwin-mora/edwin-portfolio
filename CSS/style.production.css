@@ -1,5 +1,14 @@
+:root{
+    --primary-color: #357b70;
+    --secondary-color: #e0b354;
+    --dark-grey: #2b2b2b;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --primary-font-weight: 700px;
+}
+
 a{
-    color: #357b70;
+    color: var(--primary-color);
 }
 
 *{
@@ -15,17 +24,17 @@ body{
 
 h1{
     font-size: 30px;
-    font-weight: 700px;
+    font-weight: var(--primary-font-weight);
 }
 
 h2{
     font-size: 24px;
-    font-weight: 700px;
+    font-weight: var(--primary-font-weight);
 }
 
 h3{
     font-size: 18px;
-    font-weight: 700px;
+    font-weight: var(--primary-font-weight);
 }
 
 a{
@@ -44,22 +53,12 @@ a:active{
     color: #489c79;
 }
 
-button{
-    border: none;
-    font-family: inherit;
-    background-color: #357b70;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 3px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-}
-
+button,
 .button{
     border: none;
     font-family: inherit;
-    background-color: #357b70;
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     text-decoration: none;
     padding: 10px;
     border-radius: 3px;
@@ -75,15 +74,15 @@ button:focus,
 }
 
 .button__secondary{
-    background-color: #e0b354;
-    color: #ffffff;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
 }
 
 .button__third{
     border: none;
     font-family: inherit;
-    background-color: #357b70;
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     text-decoration: none;
     padding: 10px;
     border-radius: 5px;
@@ -130,29 +129,17 @@ button:focus,
     display: flex;
 }
 
-#email{
-    margin-bottom: 10px;
-    border: 1px solid #2b2b2b;
-    padding: 9px;
-    font-size: 14px;
-}
-
-#telephone{
-    margin-bottom: 10px;
-    border: 1px solid #2b2b2b;
-    padding: 9px;
-    font-size: 14px;
-}
-
+#email,
+#telephone,
 #message{
     margin-bottom: 10px;
-    border: 1px solid #2b2b2b;
+    border: 1px solid var(--dark-grey);
     padding: 9px;
     font-size: 14px;
 }
 
 #email:focus{
-    border: 2px solid #e0b354;
+    border: 2px solid var(--secondary-color);
 }
 
 .contact__info{
@@ -237,8 +224,9 @@ button:focus,
 
 .grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
+    grid-column: span 3;
 }
 
 .grid__item{
@@ -299,28 +287,25 @@ button:focus,
 
 /* MEDIA QUERY */
 
-@media all and (max-width: 500px){
-    .grid{
-        grid-template-columns: 1fr;
+@media all and (max-width: 500px) {
+    .grid {
+      grid-template-columns: 1fr;
     }
-}
-
-@media all and (min-width: 500px) and (max-width: 750px){
-    .grid{
-        grid-template-columns: 1fr 1fr;
+  }
+  @media all and (min-width: 500px) and (max-width: 750px){
+    .grid {
+      grid-template-columns: 1fr 1fr;
     }
-}
-
-@media all and (max-width: 750px){
-    .grid{
-        grid-gap: 10px;
+  }
+  @media all and (max-width: 750px) {
+    .grid {
+      grid-gap: 10px;
     }
-    .grid__item:last-child{
-        grid-column: auto / auto;
-        grid-row: auto / auto;
+    .grid__item:last-child {
+      grid-column: auto / auto;
+      grid-row: auto / auto;
     }
-
-    h2{
-        font-size: 22px;
+    h1 {
+      font-size: 22px;
     }
-}
+  }
